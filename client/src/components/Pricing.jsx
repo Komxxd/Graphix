@@ -1,6 +1,7 @@
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { Check } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const plans = [
     {
@@ -25,7 +26,7 @@ const plans = [
 
 const Pricing = () => {
     return (
-        <section className="w-full bg-black py-24 md:py-32 px-4 border-t border-white/5">
+        <section id="pricing" className="w-full bg-black py-24 md:py-32 px-4 border-t border-white/5">
             <div className="max-w-[1000px] mx-auto w-full flex flex-col items-center">
 
                 <div className="text-center max-w-2xl mb-16 md:mb-20">
@@ -70,11 +71,13 @@ const Pricing = () => {
                                 ))}
                             </ul>
 
-                            <Button
-                                variant={plan.variant === 'default' ? 'default' : 'outline'}
-                                className={`w-full py-6 font-cabin text-base ${plan.variant === 'default' ? 'bg-white text-black hover:bg-white/90' : 'text-white border-white/20 hover:bg-white/10'}`}>
-                                {plan.buttonText}
-                            </Button>
+                            <Link to="/sign-up">
+                                <Button
+                                    variant={plan.variant === 'default' ? 'default' : 'outline'}
+                                    className={`w-full py-6 font-cabin text-base ${plan.variant === 'default' ? 'bg-white text-black hover:bg-white/90' : 'text-white border-white/20 hover:bg-white/10'}`}>
+                                    {plan.buttonText}
+                                </Button>
+                            </Link>
 
                         </div>
                     ))}

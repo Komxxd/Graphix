@@ -1,6 +1,7 @@
 import React from 'react';
 import { ChevronDown } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { Link } from 'react-router-dom';
 
 const Hero = () => {
     return (
@@ -39,7 +40,7 @@ const Hero = () => {
                         {/* Nav Links */}
                         <div className="hidden lg:flex items-center gap-[10px]">
                             {['Home', 'Features', 'Pricing', 'Contact us'].map((item) => (
-                                <a key={item} href="#" className="flex items-center text-white/80 font-manrope font-medium text-[14px] leading-[22px] px-[10px] py-[4px] hover:text-white transition-colors whitespace-nowrap">
+                                <a key={item} href={`#${item.toLowerCase().replace(' ', '-')}`} className="flex items-center text-white/80 font-manrope font-medium text-[14px] leading-[22px] px-[10px] py-[4px] hover:text-white transition-colors whitespace-nowrap">
                                     {item}
                                     {item === 'Features' && <ChevronDown className="ml-[3px]" size={16} color="currentColor" />}
                                 </a>
@@ -48,12 +49,16 @@ const Hero = () => {
                     </div>
 
                     <div className="flex items-center gap-[12px]">
-                        <Button variant="ghost" className="text-white hover:bg-white/10 font-manrope font-semibold text-[14px]">
-                            Sign In
-                        </Button>
-                        <Button className="hidden sm:inline-flex bg-white text-black hover:bg-white/90 font-manrope font-semibold text-[14px]">
-                            Get Started
-                        </Button>
+                        <Link to="/sign-in">
+                            <Button variant="ghost" className="text-white hover:bg-white/10 font-manrope font-semibold text-[14px]">
+                                Sign In
+                            </Button>
+                        </Link>
+                        <Link to="/sign-up">
+                            <Button className="hidden sm:inline-flex bg-white text-black hover:bg-white/90 font-manrope font-semibold text-[14px]">
+                                Get Started
+                            </Button>
+                        </Link>
                     </div>
                 </nav>
 
@@ -74,9 +79,11 @@ const Hero = () => {
                     </div>
 
                     <div className="flex flex-col sm:flex-row items-center gap-[16px] sm:gap-[22px] mt-4">
-                        <Button className="w-full sm:w-auto h-auto bg-white text-black hover:bg-neutral-200 px-[24px] py-[14px] rounded-[10px] font-cabin font-medium text-[16px]">
-                            Get Started Free
-                        </Button>
+                        <Link to="/sign-up" className="w-full sm:w-auto">
+                            <Button className="w-full h-auto bg-white text-black hover:bg-neutral-200 px-[24px] py-[14px] rounded-[10px] font-cabin font-medium text-[16px]">
+                                Get Started Free
+                            </Button>
+                        </Link>
                     </div>
                 </div>
 

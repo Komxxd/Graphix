@@ -1,10 +1,11 @@
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { Twitter, Github, Linkedin, Mail } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const ContactAndFooter = () => {
     return (
-        <section className="w-full bg-black relative flex flex-col items-center">
+        <section id="contact-us" className="w-full bg-black relative flex flex-col items-center">
 
             {/* CTA/Contact Section */}
             <div className="w-full max-w-[1200px] px-4 py-24 md:py-32 flex flex-col items-center text-center border-t border-white/5">
@@ -20,9 +21,11 @@ const ContactAndFooter = () => {
                         placeholder="Enter your email"
                         className="flex-1 bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white placeholder:text-white/30 focus:outline-none focus:border-white/30 font-inter font-medium text-sm transition-colors"
                     />
-                    <Button className="bg-white text-black hover:bg-neutral-200 px-8 py-6 rounded-lg font-cabin font-medium text-lg">
-                        Get Started
-                    </Button>
+                    <Link to="/sign-up" className="w-full sm:w-auto">
+                        <Button className="w-full bg-white text-black hover:bg-neutral-200 px-8 py-6 rounded-lg font-cabin font-medium text-lg">
+                            Get Started
+                        </Button>
+                    </Link>
                 </div>
             </div>
 
@@ -49,8 +52,8 @@ const ContactAndFooter = () => {
                     {/* Links */}
                     <div className="flex flex-col gap-4">
                         <strong className="font-inter text-white font-medium text-sm tracking-widest uppercase mb-2">Product</strong>
-                        <a href="#" className="font-manrope text-white/50 hover:text-white text-sm transition-colors">Features</a>
-                        <a href="#" className="font-manrope text-white/50 hover:text-white text-sm transition-colors">Pricing</a>
+                        <a href="#features" className="font-manrope text-white/50 hover:text-white text-sm transition-colors">Features</a>
+                        <a href="#pricing" className="font-manrope text-white/50 hover:text-white text-sm transition-colors">Pricing</a>
                         <a href="#" className="font-manrope text-white/50 hover:text-white text-sm transition-colors">Changelog</a>
                     </div>
 
@@ -64,7 +67,7 @@ const ContactAndFooter = () => {
                     <div className="flex flex-col gap-4">
                         <strong className="font-inter text-white font-medium text-sm tracking-widest uppercase mb-2">Company</strong>
                         <a href="#" className="font-manrope text-white/50 hover:text-white text-sm transition-colors">About</a>
-                        <a href="#" className="font-manrope text-white/50 hover:text-white text-sm transition-colors">Contact</a>
+                        <a href="#contact-us" className="font-manrope text-white/50 hover:text-white text-sm transition-colors">Contact</a>
                         <a href="#" className="font-manrope text-white/50 hover:text-white text-sm transition-colors flex items-center gap-2">
                             <Mail size={16} /> support@graphix.com
                         </a>
